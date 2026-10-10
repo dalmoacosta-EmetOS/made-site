@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Made Painting Service Plus | Painters in Massachusetts</title>
-<meta name="description" content="Interior and exterior painting, cabinets, decks, drywall repair and pressure washing across Massachusetts. Insured. Free estimates. We speak English and Portuguese.">
+<meta name="description" content="Residential interior painting specialists in Massachusetts: walls, ceilings, cabinets, stairs and railings. Commercial and exterior painting too. Insured. Free, detailed written estimates.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +105,7 @@
   .chip:hover { border-color: var(--forest); box-shadow: 0 2px 10px rgba(31,44,37,.08); }
   .chip-body { flex: 1; display: flex; flex-direction: column; }
   .chip-go { margin-top: auto; padding-top: 10px; font-size: 14px; font-weight: 700; color: var(--copper); }
-  .project, #estimate { scroll-margin-top: 80px; }
+  .project, #estimate, #about { scroll-margin-top: 80px; }
   .chip-color { height: 88px; }
   .chip-body { padding: 14px 16px 16px; }
   .chip h3 { margin: 0 0 4px; font-size: 18px; font-weight: 700; font-variation-settings: "wdth" 106; }
@@ -137,6 +137,24 @@
   .steps li::before { content: counter(s); display: block; font-weight: 800; font-variation-settings: "wdth" 118; font-size: 34px; line-height: 1; color: var(--copper); margin-bottom: 10px; }
   .steps h3 { margin: 0 0 6px; font-size: 19px; font-weight: 700; }
   .steps p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+  @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } }
+  .eyebrow { margin: 0 0 10px; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--copper); }
+  .about-copy p { margin: 0 0 14px; color: var(--ink-soft); max-width: 62ch; }
+  .about-copy p.promise { color: var(--ink); font-size: 18px; }
+  .about-copy strong { color: var(--forest); }
+  .stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stats li { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 16px; }
+  .stats b { display: block; font-weight: 800; font-variation-settings: "wdth" 118; font-size: clamp(28px, 3.6vw, 36px); line-height: 1; color: var(--forest); margin-bottom: 6px; }
+  .stats span { font-size: 15px; color: var(--ink-soft); line-height: 1.35; display: block; }
+  .values-h { margin: clamp(36px, 5vw, 52px) 0 18px; font-size: 22px; font-weight: 800; font-variation-settings: "wdth" 110; color: var(--forest); }
+  .values { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; }
+  .values li { background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--copper); border-radius: var(--radius); padding: 16px 18px; }
+  .values h4 { margin: 0 0 6px; font-size: 17px; font-weight: 700; color: var(--ink); }
+  .values p { margin: 0; font-size: 15px; color: var(--ink-soft); line-height: 1.45; }
 
   /* Reviews + area */
   .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; }
@@ -317,14 +335,42 @@
       </div>
       <ol class="steps">
         <li><h3 data-i18n="st1">Tell us about the job</h3><p data-i18n="st1d">Call, text or send photos on WhatsApp. A few pictures help us understand the space.</p></li>
-        <li><h3 data-i18n="st2">Free estimate</h3><p data-i18n="st2d">We look at the space, talk through colors and finishes, and give you a written price.</p></li>
+        <li><h3 data-i18n="st2">Free, detailed estimate</h3><p data-i18n="st2d">We look at the space, talk through colors and finishes, and give you a written estimate with every step explained.</p></li>
         <li><h3 data-i18n="st3">We paint</h3><p data-i18n="st3d">Floors and furniture covered, surfaces repaired and primed, then the paint.</p></li>
         <li><h3 data-i18n="st4">Walkthrough</h3><p data-i18n="st4d">We check the finished work with you and leave the space clean.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="alt" aria-label="Reviews and service area">
+  <section id="about" class="alt" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="eyebrow" data-i18n="ab_eye">About Made</p>
+          <h2 id="about-h" data-i18n="ab_h">Your estimate is our promise.</h2>
+          <p class="promise"><span data-i18n="ab_p1">Every Made estimate lays out, step by step, what will be done, and often why each step matters. It isn't a rough guess. It's the commitment we make to you.</span> <strong data-i18n="ab_p1b">What we agree on is what we deliver.</strong></p>
+          <p data-i18n="ab_p2">Made Painting Service Plus is entering its fourth year in Massachusetts. The team behind it brings more than 30 years of combined experience in professional painting.</p>
+          <p data-i18n="ab_p3">Our specialty is residential interior painting. That's where we deliver our finest finish: walls, ceilings, kitchen cabinets, stairs, handrails and balusters.</p>
+          <p data-i18n="ab_p4">We also take on commercial painting, from storefronts and offices to rental apartments, at the same standard, whether you own the property or you're the general contractor. And we paint exteriors too, residential and commercial, along with pressure washing.</p>
+        </div>
+        <ul class="stats">
+          <li><b data-i18n="ab_n1">4th</b><span data-i18n="ab_n1d">year in business</span></li>
+          <li><b>30+</b><span data-i18n="ab_n2d">years of combined experience</span></li>
+          <li><b data-i18n="ab_n3">Insured</b><span data-i18n="ab_n3d">liability coverage</span></li>
+          <li><b data-i18n="ab_n4">Free</b><span data-i18n="ab_n4d">detailed written estimates</span></li>
+        </ul>
+      </div>
+      <h3 class="values-h" data-i18n="val_h">What we stand for</h3>
+      <ul class="values">
+        <li><h4 data-i18n="v1">A detailed estimate, in writing</h4><p data-i18n="v1d">You know what will be done at each step and why. And that's exactly what we deliver: if it says two coats, you get two coats.</p></li>
+        <li><h4 data-i18n="v2">Clean work</h4><p data-i18n="v2d">Your home is protected during the job and left clean at the end.</p></li>
+        <li><h4 data-i18n="v3">Fair pricing</h4><p data-i18n="v3d">The price matches the level of finish you choose. You know what you're paying for, and why.</p></li>
+        <li><h4 data-i18n="v4">Honest work</h4><p data-i18n="v4d">From the first estimate to the last coat, we do what we said we'd do.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-label="Reviews and service area">
     <div class="wrap two">
       <div class="panel">
         <h3 data-i18n="rev_h">Read our reviews on Google</h3>
@@ -428,7 +474,19 @@
     before: "Antes", after: "Depois",
     how_h: "Como funciona",
     st1: "Conte sobre o serviço", st1d: "Ligue, mande SMS ou fotos pelo WhatsApp. Algumas fotos ajudam a entender o espaço.",
-    st2: "Orçamento grátis", st2d: "Olhamos o espaço, conversamos sobre cores e acabamentos e passamos o preço por escrito.",
+    st2: "Orçamento grátis e detalhado", st2d: "Olhamos o espaço, conversamos sobre cores e acabamentos e entregamos um orçamento por escrito, com cada etapa explicada.",
+    ab_eye: "Sobre a Made", ab_h: "Seu orçamento é a nossa promessa.",
+    ab_p1: "Cada orçamento da Made traz o passo a passo do que será feito, e muitas vezes o porquê de cada etapa. Não é uma estimativa vaga: é o compromisso que assumimos com você.",
+    ab_p1b: "O que combinamos é o que entregamos.",
+    ab_p2: "A Made Painting Service Plus está entrando no seu quarto ano em Massachusetts. A equipe por trás dela soma mais de 30 anos de experiência em pintura profissional.",
+    ab_p3: "Nossa especialidade é pintura interna residencial. É onde entregamos nosso acabamento mais fino: paredes, tetos, armários de cozinha, escadas, corrimãos e balaústres.",
+    ab_p4: "Também atendemos pintura comercial, de lojas e salas a apartamentos de aluguel, com o mesmo padrão, seja o cliente o dono do imóvel ou o general contractor. E fazemos pintura externa, residencial e comercial, além de pressure washing.",
+    ab_n1: "4º", ab_n1d: "ano de empresa", ab_n2d: "anos de experiência somados", ab_n3: "Segurados", ab_n3d: "seguro de responsabilidade civil", ab_n4: "Grátis", ab_n4d: "orçamento detalhado por escrito",
+    val_h: "No que acreditamos",
+    v1: "Orçamento detalhado, por escrito", v1d: "Você sabe o que será feito em cada etapa e por quê. E é exatamente isso que entregamos: se está escrito duas demãos, são duas demãos.",
+    v2: "Trabalho limpo", v2d: "Sua casa é protegida durante a obra e entregue limpa no final.",
+    v3: "Preço justo", v3d: "O valor acompanha o nível de acabamento contratado. Você sabe o que está pagando e por quê.",
+    v4: "Trabalho honesto", v4d: "Do primeiro orçamento à última demão, fazemos o que dissemos que faríamos.",
     st3: "Pintamos", st3d: "Piso e móveis protegidos, superfícies reparadas e seladas, e então a tinta.",
     st4: "Revisão final", st4d: "Conferimos o resultado com você e deixamos o ambiente limpo.",
     rev_h: "Veja nossas avaliações no Google", rev_p: "Leia o que os clientes dizem, ou deixe sua avaliação depois do serviço.", rev_btn: "Abrir nosso perfil no Google",
@@ -471,7 +529,19 @@
     before: "Antes", after: "Después",
     how_h: "Cómo trabajamos",
     st1: "Cuéntenos del trabajo", st1d: "Llame, escriba o mande fotos por WhatsApp. Unas fotos nos ayudan a entender el espacio.",
-    st2: "Presupuesto gratis", st2d: "Vemos el espacio, hablamos de colores y acabados y le damos el precio por escrito.",
+    st2: "Presupuesto gratis y detallado", st2d: "Vemos el espacio, hablamos de colores y acabados y le entregamos un presupuesto por escrito, con cada paso explicado.",
+    ab_eye: "Sobre Made", ab_h: "Su presupuesto es nuestra promesa.",
+    ab_p1: "Cada presupuesto de Made detalla, paso a paso, lo que se va a hacer, y muchas veces por qué cada paso es necesario. No es un cálculo aproximado: es el compromiso que asumimos con usted.",
+    ab_p1b: "Lo que acordamos es lo que entregamos.",
+    ab_p2: "Made Painting Service Plus está entrando en su cuarto año en Massachusetts. El equipo detrás suma más de 30 años de experiencia en pintura profesional.",
+    ab_p3: "Nuestra especialidad es la pintura interior residencial. Ahí entregamos nuestro mejor acabado: paredes, techos, gabinetes de cocina, escaleras, pasamanos y balaústres.",
+    ab_p4: "También hacemos pintura comercial, desde locales y oficinas hasta apartamentos de alquiler, con el mismo estándar, ya sea usted el dueño de la propiedad o el contratista general. Y pintamos exteriores, residenciales y comerciales, además de lavado a presión.",
+    ab_n1: "4.º", ab_n1d: "año en el negocio", ab_n2d: "años de experiencia sumados", ab_n3: "Asegurados", ab_n3d: "seguro de responsabilidad civil", ab_n4: "Gratis", ab_n4d: "presupuesto detallado por escrito",
+    val_h: "En lo que creemos",
+    v1: "Presupuesto detallado, por escrito", v1d: "Usted sabe qué se hará en cada paso y por qué. Y eso es exactamente lo que entregamos: si dice dos manos, son dos manos.",
+    v2: "Trabajo limpio", v2d: "Su casa queda protegida durante el trabajo y se entrega limpia al final.",
+    v3: "Precio justo", v3d: "El precio corresponde al nivel de acabado contratado. Usted sabe qué está pagando y por qué.",
+    v4: "Trabajo honesto", v4d: "Del primer presupuesto a la última mano, hacemos lo que dijimos que haríamos.",
     st3: "Pintamos", st3d: "Pisos y muebles protegidos, superficies reparadas y selladas, y luego la pintura.",
     st4: "Revisión final", st4d: "Revisamos el resultado con usted y dejamos el espacio limpio.",
     rev_h: "Vea nuestras reseñas en Google", rev_p: "Lea lo que dicen nuestros clientes, o deje su reseña después del trabajo.", rev_btn: "Abrir nuestro perfil en Google",
