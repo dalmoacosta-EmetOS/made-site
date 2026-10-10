@@ -121,6 +121,7 @@
 
   /* Work gallery */
   .projects { display: grid; gap: clamp(36px, 6vw, 64px); }
+  .project { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(16px, 3vw, 24px); }
   .project-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 14px; }
   .project-head h3 { margin: 0; font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; font-variation-settings: "wdth" 110; color: var(--forest); }
   .project-head p { margin: 0; color: var(--ink-soft); font-size: 16px; }
@@ -307,20 +308,11 @@
       <article class="project" id="proj-billerica">
         <div class="project-head"><h3 data-i18n="p_bil">Cabinet refinishing, Billerica</h3><p><span data-i18n="p_bil_d">Old stain stripped and a new, slightly lighter stain applied.</span></p></div>
         <div class="shots">
-          <button type="button" class="shot wide"><img src="img/billerica-panorama.jpg" alt="Finished kitchen, wide view" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
           <button type="button" class="shot"><img src="img/billerica-antes.jpg" alt="Cabinets during stripping" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
           <button type="button" class="shot"><img src="img/billerica-depois-1.jpg" alt="Finished cabinets around the cooktop" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
           <button type="button" class="shot"><img src="img/billerica-depois-2.jpg" alt="Finished cabinets by the refrigerator" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
           <button type="button" class="shot"><img src="img/billerica-depois-3.jpg" alt="Finished cabinets around the sink" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-        </div>
-      </article>
-      <article class="project" id="proj-brookline">
-        <div class="project-head"><h3 data-i18n="p_bro">Whole house, Brookline</h3><p><span data-i18n="p_bro_d">Exterior and full interior.</span></p></div>
-        <div class="shots">
-          <button type="button" class="shot"><img src="img/brookline-exterior.jpg" alt="House exterior after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/brookline-depois-1.jpg" alt="Living room with fireplace" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/brookline-depois-2.jpg" alt="Staircase" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/brookline-depois-3.jpg" alt="Kitchen" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot wide"><img src="img/billerica-panorama.jpg" alt="Finished kitchen, wide view" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
         </div>
       </article>
       <article class="project" id="proj-somerville">
