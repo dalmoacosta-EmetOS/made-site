@@ -59,6 +59,14 @@
   .langs .lang:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
   .langs .lang[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: var(--white); position: relative; }
 
+  .mainnav { display: flex; gap: 4px 22px; font-size: 15px; font-weight: 600; }
+  .mainnav a { text-decoration: none; color: var(--forest); padding: 6px 0; white-space: nowrap; }
+  .mainnav a:hover { color: var(--copper); }
+  @media (max-width: 900px) {
+    .top .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; padding-bottom: 0; }
+    .mainnav { order: 3; width: 100%; overflow-x: auto; gap: 18px; padding: 4px 0 8px; border-top: 1px solid var(--line); margin-top: 8px; }
+  }
+
   /* Buttons */
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: var(--radius); padding: 14px 20px; border: 2px solid transparent; cursor: pointer; line-height: 1.1; }
   .btn svg { width: 18px; height: 18px; flex: none; }
@@ -105,7 +113,7 @@
   .chip:hover { border-color: var(--forest); box-shadow: 0 2px 10px rgba(31,44,37,.08); }
   .chip-body { flex: 1; display: flex; flex-direction: column; }
   .chip-go { margin-top: auto; padding-top: 10px; font-size: 14px; font-weight: 700; color: var(--copper); }
-  .project, #estimate, #about { scroll-margin-top: 80px; }
+  .project, #estimate, #about, #services, #work { scroll-margin-top: 110px; }
   .chip-color { height: 88px; }
   .chip-body { padding: 14px 16px 16px; }
   .chip h3 { margin: 0 0 4px; font-size: 18px; font-weight: 700; font-variation-settings: "wdth" 106; }
@@ -212,6 +220,12 @@
       <img src="logo.png" alt="" width="42" height="46">
       <span class="brand-name">Made Painting<small>Service Plus LLC</small></span>
     </a>
+    <nav class="mainnav" aria-label="Main">
+      <a href="/#services" data-i18n="nav_services">Services</a>
+      <a href="/#work" data-i18n="nav_work">Our work</a>
+      <a href="/#about" data-i18n="nav_about">About us</a>
+      <a href="/#estimate" data-i18n="nav_est">Free estimate</a>
+    </nav>
     <div class="top-actions">
       <div class="langs" role="group" aria-label="Language / Idioma">
         <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="true">EN</button>
@@ -272,13 +286,22 @@
         <p class="lead" data-i18n="work_lead">Recent jobs by our team. Tap a photo to see it larger.</p>
       </div>
       <div class="projects">
-      <article class="project" id="proj-somerville">
-        <div class="project-head"><h3 data-i18n="p_som">Exterior repaint, Somerville</h3><p><span data-i18n="p_som_d">Siding, trim and the back deck.</span></p></div>
+      <article class="project" id="proj-cambridge">
+        <div class="project-head"><h3 data-i18n="p_cam">Interior, Cambridge</h3><p><span data-i18n="p_cam_d">Walls, trim, doors and staircase.</span></p></div>
         <div class="shots">
-          <button type="button" class="shot"><img src="img/somerville-antes-1.jpg" alt="House front before painting" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
-          <button type="button" class="shot"><img src="img/somerville-depois-1.jpg" alt="House front after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/somerville-antes-2.jpg" alt="Back deck before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
-          <button type="button" class="shot"><img src="img/somerville-depois-2.jpg" alt="Back deck after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-antes.jpg" alt="Room before painting" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-depois-1.jpg" alt="Living room after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-depois-2.jpg" alt="Staircase after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-depois-3.jpg" alt="Bedroom after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+        </div>
+      </article>
+      <article class="project" id="proj-wellesley">
+        <div class="project-head"><h3 data-i18n="p_wel">Kitchen cabinets, Wellesley</h3><p><span data-i18n="p_wel_d">White cabinets repainted in a soft sage green.</span> <a href="https://www.instagram.com/prest_service_usa/" target="_blank" rel="noopener" data-i18n="p_wel_with">With @prest_service_usa</a></p></div>
+        <div class="shots">
+          <button type="button" class="shot"><img src="img/wellesley-antes-1.jpg" alt="Glass cabinets before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/wellesley-depois-1.jpg" alt="Island after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/wellesley-antes-2.jpg" alt="Pantry cabinets before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/wellesley-depois-2.jpg" alt="Kitchen after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
         </div>
       </article>
       <article class="project" id="proj-billerica">
@@ -291,15 +314,6 @@
           <button type="button" class="shot"><img src="img/billerica-depois-3.jpg" alt="Finished cabinets around the sink" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
         </div>
       </article>
-      <article class="project" id="proj-wellesley">
-        <div class="project-head"><h3 data-i18n="p_wel">Kitchen cabinets, Wellesley</h3><p><span data-i18n="p_wel_d">White cabinets repainted in a soft sage green.</span> <a href="https://www.instagram.com/prest_service_usa/" target="_blank" rel="noopener" data-i18n="p_wel_with">With @prest_service_usa</a></p></div>
-        <div class="shots">
-          <button type="button" class="shot"><img src="img/wellesley-antes-1.jpg" alt="Glass cabinets before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
-          <button type="button" class="shot"><img src="img/wellesley-depois-1.jpg" alt="Island after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/wellesley-antes-2.jpg" alt="Pantry cabinets before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
-          <button type="button" class="shot"><img src="img/wellesley-depois-2.jpg" alt="Kitchen after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-        </div>
-      </article>
       <article class="project" id="proj-brookline">
         <div class="project-head"><h3 data-i18n="p_bro">Whole house, Brookline</h3><p><span data-i18n="p_bro_d">Exterior and full interior.</span></p></div>
         <div class="shots">
@@ -309,13 +323,13 @@
           <button type="button" class="shot"><img src="img/brookline-depois-3.jpg" alt="Kitchen" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
         </div>
       </article>
-      <article class="project" id="proj-cambridge">
-        <div class="project-head"><h3 data-i18n="p_cam">Interior, Cambridge</h3><p><span data-i18n="p_cam_d">Walls, trim, doors and staircase.</span></p></div>
+      <article class="project" id="proj-somerville">
+        <div class="project-head"><h3 data-i18n="p_som">Exterior repaint, Somerville</h3><p><span data-i18n="p_som_d">Siding, trim and the back deck.</span></p></div>
         <div class="shots">
-          <button type="button" class="shot"><img src="img/cambridge-antes.jpg" alt="Room before painting" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
-          <button type="button" class="shot"><img src="img/cambridge-depois-1.jpg" alt="Living room after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/cambridge-depois-2.jpg" alt="Staircase after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
-          <button type="button" class="shot"><img src="img/cambridge-depois-3.jpg" alt="Bedroom after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/somerville-antes-1.jpg" alt="House front before painting" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/somerville-depois-1.jpg" alt="House front after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/somerville-antes-2.jpg" alt="Back deck before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/somerville-depois-2.jpg" alt="Back deck after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
         </div>
       </article>
       </div>
@@ -501,6 +515,7 @@
     s5: "Comercial e aluguel", s5d: "Lojas, salas e apartamentos de aluguel.",
     s6: "Externa e pressure washing", s6d: "Siding, acabamentos, decks e lavagem com pressão.",
     chip_det: "Ver detalhes",
+    nav_services: "Serviços", nav_work: "Trabalhos", nav_about: "Sobre nós", nav_est: "Orçamento",
     foot: "Empresa de pintura com seguro, Malden, Massachusetts"
   };
   var es = {
@@ -563,6 +578,7 @@
     s5: "Comercial y alquiler", s5d: "Locales, oficinas y apartamentos de alquiler.",
     s6: "Exterior y lavado a presión", s6d: "Siding, molduras, decks y lavado a presión.",
     chip_det: "Ver detalles",
+    nav_services: "Servicios", nav_work: "Trabajos", nav_about: "Nosotros", nav_est: "Presupuesto",
     foot: "Empresa de pintura asegurada, Malden, Massachusetts"
   };
   var en = {};
