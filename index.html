@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Made Painting Service Plus | Painters in Massachusetts</title>
+<meta name="description" content="Interior and exterior painting, cabinets, decks, drywall repair and pressure washing across Massachusetts. Insured. Free estimates. We speak English and Portuguese.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2E3F35;
+    --forest-deep: #1F2C25;
+    --ink: #1B2620;
+    --ink-soft: #4C5A52;
+    --copper: #B05F1A;
+    --copper-hover: #934E12;
+    --primer: #F2F3EF;
+    --white: #FFFFFF;
+    --line: #D9DDD6;
+    --cream: #E8DFC2;
+    --radius: 6px;
+    --gutter: clamp(16px, 5vw, 48px);
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-variation-settings: "wdth" 100;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--copper); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Header */
+  .top { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+  .brand img { width: auto; height: 46px; flex: none; }
+  .brand-name { font-weight: 800; font-variation-settings: "wdth" 112; font-size: 17px; line-height: 1.1; color: var(--forest); }
+  .brand-name small { display: block; font-weight: 500; font-variation-settings: "wdth" 100; font-size: 13px; color: var(--ink-soft); }
+  .top-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+  .lang { font: inherit; font-size: 14px; font-weight: 600; background: none; border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 10px; color: var(--forest); cursor: pointer; }
+  .lang:hover { border-color: var(--forest); }
+  .langs { display: flex; }
+  .langs .lang { border-radius: 0; padding: 8px 9px; margin-left: -1px; }
+  .langs .lang:first-child { border-radius: var(--radius) 0 0 var(--radius); margin-left: 0; }
+  .langs .lang:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+  .langs .lang[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: var(--white); position: relative; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: var(--radius); padding: 14px 20px; border: 2px solid transparent; cursor: pointer; line-height: 1.1; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn-primary { background: var(--copper); color: var(--white); }
+  .btn-primary:hover { background: var(--copper-hover); }
+  .btn-light { background: var(--white); color: var(--forest); }
+  .btn-light:hover { background: var(--cream); }
+  .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,.55); }
+  .btn-ghost:hover { border-color: var(--white); }
+  .btn-sm { padding: 9px 12px; font-size: 14px; }
+  @media (max-width: 420px) { .top .btn-sm span { display: none; } }
+
+  /* Hero: the one bold moment, a roller stroke */
+  .hero { position: relative; padding: clamp(28px, 6vw, 64px) 0 clamp(36px, 7vw, 80px); overflow: hidden; }
+  .stroke { position: absolute; inset: 14px 0 22px 0; z-index: 0; }
+  .stroke svg { width: 100%; height: 100%; display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .stroke { animation: roll 1.1s cubic-bezier(.6,.05,.25,1) .15s both; }
+    @keyframes roll { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+    .hero-copy { animation: rise .6s ease-out .9s both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-copy { color: var(--white); max-width: 760px; padding: clamp(24px, 4vw, 48px) 0; }
+  .hero h1 { margin: 0 0 16px; font-weight: 800; font-variation-settings: "wdth" 118; font-size: clamp(38px, 7.2vw, 76px); line-height: .98; letter-spacing: -.01em; text-wrap: balance; }
+  .hero p { margin: 0 0 26px; font-size: clamp(17px, 2.1vw, 20px); max-width: 52ch; color: #E7ECE7; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  .facts { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; color: var(--cream); font-weight: 600; }
+  .facts li { display: flex; align-items: center; gap: 8px; }
+  .facts svg { width: 16px; height: 16px; }
+
+  /* Sections */
+  section { padding: clamp(52px, 8vw, 96px) 0; }
+  .section-head { max-width: 640px; margin-bottom: 32px; }
+  h2 { margin: 0 0 10px; font-weight: 800; font-variation-settings: "wdth" 112; font-size: clamp(28px, 4.2vw, 42px); line-height: 1.05; color: var(--forest); text-wrap: balance; }
+  .lead { margin: 0; color: var(--ink-soft); font-size: 18px; }
+  .alt { background: var(--primer); }
+
+  /* Services as paint chips */
+  .chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 155px), 1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
+  .chip { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+  .chip-color { height: 88px; }
+  .chip-body { padding: 14px 16px 16px; }
+  .chip h3 { margin: 0 0 4px; font-size: 18px; font-weight: 700; font-variation-settings: "wdth" 106; }
+  .chip p { margin: 0; font-size: 15px; color: var(--ink-soft); line-height: 1.45; }
+
+  /* Work gallery */
+  .projects { display: grid; gap: clamp(36px, 6vw, 64px); }
+  .project-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 14px; }
+  .project-head h3 { margin: 0; font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; font-variation-settings: "wdth" 110; color: var(--forest); }
+  .project-head p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+  .project-head a { color: var(--copper); font-weight: 600; text-decoration: none; }
+  .project-head a:hover { text-decoration: underline; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  @media (max-width: 760px) { .shots { grid-template-columns: repeat(2, 1fr); } }
+  .shot { position: relative; margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--line); aspect-ratio: 3 / 4; padding: 0; border: 0; cursor: zoom-in; display: block; width: 100%; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot.wide { grid-column: 1 / -1; aspect-ratio: 16 / 6; }
+  @media (max-width: 760px) { .shot.wide { aspect-ratio: 16 / 9; } }
+  .tag { position: absolute; left: 8px; top: 8px; font-size: 13px; font-weight: 700; color: var(--white); background: var(--forest); padding: 4px 8px; border-radius: 4px; line-height: 1.1; }
+  .tag.before { background: var(--copper); }
+  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(20,28,24,.92); display: none; align-items: center; justify-content: center; padding: 20px; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: var(--radius); }
+  .lightbox button { position: absolute; top: 14px; right: 14px; font: inherit; font-size: 15px; font-weight: 700; background: var(--white); color: var(--forest); border: 0; border-radius: var(--radius); padding: 10px 14px; cursor: pointer; }
+
+  /* Steps: a real sequence */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 28px; counter-reset: s; }
+  .steps li { counter-increment: s; border-top: 3px solid var(--forest); padding-top: 16px; }
+  .steps li::before { content: counter(s); display: block; font-weight: 800; font-variation-settings: "wdth" 118; font-size: 34px; line-height: 1; color: var(--copper); margin-bottom: 10px; }
+  .steps h3 { margin: 0 0 6px; font-size: 19px; font-weight: 700; }
+  .steps p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+
+  /* Reviews + area */
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; }
+  .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); background: var(--white); }
+  .panel h3 { margin: 0 0 8px; font-size: 22px; font-weight: 800; font-variation-settings: "wdth" 110; color: var(--forest); }
+  .panel p { margin: 0 0 18px; color: var(--ink-soft); }
+  .panel .btn-primary, .panel .btn-outline { margin-top: 4px; }
+  .btn-outline { background: transparent; color: var(--forest); border-color: var(--forest); }
+  .btn-outline:hover { background: var(--forest); color: var(--white); }
+
+  /* Estimate */
+  .estimate { background: var(--forest); color: var(--white); }
+  .estimate h2 { color: var(--white); }
+  .estimate .lead { color: #D7DED8; }
+  .est-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(24px, 5vw, 56px); align-items: start; }
+  .contact-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+  .contact-list a { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; text-decoration: none; color: var(--white); }
+  .contact-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .contact-list svg { width: 20px; height: 20px; color: var(--cream); }
+  form { background: var(--white); color: var(--ink); border-radius: var(--radius); padding: clamp(20px, 3vw, 30px); display: grid; gap: 14px; }
+  label { display: grid; gap: 6px; font-size: 15px; font-weight: 600; }
+  input, select, textarea { font: inherit; font-size: 16px; padding: 12px 12px; border: 1px solid #B9C0B8; border-radius: var(--radius); background: var(--white); color: var(--ink); width: 100%; }
+  textarea { min-height: 110px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: 3px solid rgba(176,95,26,.35); border-color: var(--copper); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  .form-note { margin: 0; font-size: 14px; color: var(--ink-soft); }
+  .hidden { display: none; }
+
+  footer { background: var(--forest-deep); color: #C9D1CB; padding: 32px 0 calc(32px + env(safe-area-inset-bottom)); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; }
+  footer strong { color: var(--white); }
+
+  /* Sticky call bar on phones */
+  .callbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: none; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--line); }
+  .callbar .btn { flex: 1; padding: 13px 6px; font-size: 15px; gap: 6px; min-width: 0; }
+  @media (max-width: 720px) { .callbar { display: flex; } body { padding-bottom: 76px; } }
+@media (max-width: 520px) { .chip-color { height: 52px; } .chip-body { padding: 12px; } .chip h3 { font-size: 16px; } .chip p { font-size: 14px; } }
+@media (max-width: 400px) { .brand-name { font-size: 15px; } .brand-name small { display: none; } .brand img { height: 40px; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-sms" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Made Painting Service Plus, home">
+      <img src="logo.png" alt="" width="42" height="46">
+      <span class="brand-name">Made Painting<small>Service Plus LLC</small></span>
+    </a>
+    <div class="top-actions">
+      <div class="langs" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang" data-lang="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang" data-lang="pt" lang="pt-BR" aria-pressed="false">PT</button>
+        <button type="button" class="lang" data-lang="es" lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="tel:+17327916348"><svg><use href="#i-phone"/></svg><span data-i18n="call_short">Call</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="stroke" aria-hidden="true">
+      <svg viewBox="0 0 1200 520" preserveAspectRatio="none">
+        <path fill="#2E3F35" d="M0 34 C120 18 260 40 400 22 C560 4 700 30 860 16 C990 6 1100 26 1200 14 L1200 500 C1110 512 1010 494 880 508 C720 522 600 498 440 512 C300 524 160 500 0 514 Z"/>
+        <path fill="#26362D" opacity=".55" d="M0 470 C160 456 300 482 460 466 C620 452 760 478 920 462 C1040 452 1120 470 1200 460 L1200 500 C1110 512 1010 494 880 508 C720 522 600 498 440 512 C300 524 160 500 0 514 Z"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 data-i18n="h1">Interior and exterior painting across Massachusetts</h1>
+        <p data-i18n="hero_p">Homes and businesses, from a single room to the whole house. Careful prep, clean finish, and a free estimate before any work begins.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#estimate" data-i18n="cta_estimate">Get a free estimate</a>
+          <a class="btn btn-ghost" href="sms:+17327916348"><svg><use href="#i-sms"/></svg><span data-i18n="cta_text">Send us a text</span></a>
+        </div>
+        <ul class="facts">
+          <li><svg><use href="#i-check"/></svg><span data-i18n="fact_insured">Insured</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-i18n="fact_free">Free estimates</span></li>
+          <li><svg><use href="#i-check"/></svg><span data-i18n="fact_lang">English and Portuguese</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="services-h" data-i18n="services_h">What we paint</h2>
+        <p class="lead" data-i18n="services_lead">Inside, outside and everything in between.</p>
+      </div>
+      <ul class="chips">
+        <li class="chip"><div class="chip-color" style="background:#C9CFC3"></div><div class="chip-body"><h3 data-i18n="s1">Interior painting</h3><p data-i18n="s1d">Walls, ceilings, trim and doors.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#2E4A5C"></div><div class="chip-body"><h3 data-i18n="s2">Exterior painting</h3><p data-i18n="s2d">Siding, trim and doors, prepped to last through New England winters.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#F1EEE6"></div><div class="chip-body"><h3 data-i18n="s3">Cabinet painting</h3><p data-i18n="s3d">Kitchen and bathroom cabinets refreshed without replacing them.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#8A5A3B"></div><div class="chip-body"><h3 data-i18n="s4">Decks and wood</h3><p data-i18n="s4d">Deck painting, wood staining and finishing.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#9AA79A"></div><div class="chip-body"><h3 data-i18n="s5">Drywall repair</h3><p data-i18n="s5d">Holes, cracks and patches repaired before we paint.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#D9C79A"></div><div class="chip-body"><h3 data-i18n="s6">Wallpaper removal</h3><p data-i18n="s6d">Old paper off, walls prepped and painted.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#5B6B73"></div><div class="chip-body"><h3 data-i18n="s7">Furniture and metal</h3><p data-i18n="s7d">Furniture, railings and metal surfaces, including spray finishes.</p></div></li>
+        <li class="chip"><div class="chip-color" style="background:#A9BCC8"></div><div class="chip-body"><h3 data-i18n="s8">Pressure washing</h3><p data-i18n="s8d">Siding, decks and driveways, on its own or before painting.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work" class="alt" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="work-h" data-i18n="work_h">Before and after</h2>
+        <p class="lead" data-i18n="work_lead">Recent jobs by our team. Tap a photo to see it larger.</p>
+      </div>
+      <div class="projects">
+      <article class="project">
+        <div class="project-head"><h3 data-i18n="p_som">Exterior repaint, Somerville</h3><p><span data-i18n="p_som_d">Siding, trim and the back deck.</span></p></div>
+        <div class="shots">
+          <button type="button" class="shot"><img src="img/somerville-antes-1.jpg" alt="House front before painting" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/somerville-depois-1.jpg" alt="House front after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/somerville-antes-2.jpg" alt="Back deck before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/somerville-depois-2.jpg" alt="Back deck after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><h3 data-i18n="p_bil">Cabinet refinishing, Billerica</h3><p><span data-i18n="p_bil_d">Old stain stripped and a new, slightly lighter stain applied.</span></p></div>
+        <div class="shots">
+          <button type="button" class="shot wide"><img src="img/billerica-panorama.jpg" alt="Finished kitchen, wide view" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/billerica-antes.jpg" alt="Cabinets during stripping" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/billerica-depois-1.jpg" alt="Finished cabinets around the cooktop" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/billerica-depois-2.jpg" alt="Finished cabinets by the refrigerator" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/billerica-depois-3.jpg" alt="Finished cabinets around the sink" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><h3 data-i18n="p_wel">Kitchen cabinets, Wellesley</h3><p><span data-i18n="p_wel_d">White cabinets repainted in a soft sage green.</span> <a href="https://www.instagram.com/prest_service_usa/" target="_blank" rel="noopener" data-i18n="p_wel_with">With @prest_service_usa</a></p></div>
+        <div class="shots">
+          <button type="button" class="shot"><img src="img/wellesley-antes-1.jpg" alt="Glass cabinets before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/wellesley-depois-1.jpg" alt="Island after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/wellesley-antes-2.jpg" alt="Pantry cabinets before" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/wellesley-depois-2.jpg" alt="Kitchen after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><h3 data-i18n="p_bro">Whole house, Brookline</h3><p><span data-i18n="p_bro_d">Exterior and full interior.</span></p></div>
+        <div class="shots">
+          <button type="button" class="shot"><img src="img/brookline-exterior.jpg" alt="House exterior after painting" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/brookline-depois-1.jpg" alt="Living room with fireplace" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/brookline-depois-2.jpg" alt="Staircase" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/brookline-depois-3.jpg" alt="Kitchen" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><h3 data-i18n="p_cam">Interior, Cambridge</h3><p><span data-i18n="p_cam_d">Walls, trim, doors and staircase.</span></p></div>
+        <div class="shots">
+          <button type="button" class="shot"><img src="img/cambridge-antes.jpg" alt="Room before painting" loading="lazy"><span class="tag before" data-i18n="before">Before</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-depois-1.jpg" alt="Living room after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-depois-2.jpg" alt="Staircase after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+          <button type="button" class="shot"><img src="img/cambridge-depois-3.jpg" alt="Bedroom after" loading="lazy"><span class="tag" data-i18n="after">After</span></button>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+    <button type="button" id="lb-close" data-i18n="close">Close</button>
+    <img alt="">
+  </div>
+
+  <section id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-h" data-i18n="how_h">How a job works</h2>
+      </div>
+      <ol class="steps">
+        <li><h3 data-i18n="st1">Tell us about the job</h3><p data-i18n="st1d">Call, text or send photos on WhatsApp. A few pictures help us understand the space.</p></li>
+        <li><h3 data-i18n="st2">Free estimate</h3><p data-i18n="st2d">We look at the space, talk through colors and finishes, and give you a written price.</p></li>
+        <li><h3 data-i18n="st3">We paint</h3><p data-i18n="st3d">Floors and furniture covered, surfaces repaired and primed, then the paint.</p></li>
+        <li><h3 data-i18n="st4">Walkthrough</h3><p data-i18n="st4d">We check the finished work with you and leave the space clean.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="alt" aria-label="Reviews and service area">
+    <div class="wrap two">
+      <div class="panel">
+        <h3 data-i18n="rev_h">Read our reviews on Google</h3>
+        <p data-i18n="rev_p">See what our clients say, or leave a review after your job.</p>
+        <a class="btn btn-outline" href="https://www.google.com/search?q=Made+Painting+Service+Plus+LLC" data-i18n="rev_btn">Open our Google profile</a>
+      </div>
+      <div class="panel">
+        <h3 data-i18n="area_h">Where we work</h3>
+        <p data-i18n="area_p">Based in Malden, working across Massachusetts. Not sure if we go to your town? Ask us.</p>
+        <a class="btn btn-outline" href="#estimate" data-i18n="area_btn">Ask about your town</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="estimate" class="estimate" aria-labelledby="est-h">
+    <div class="wrap est-grid">
+      <div>
+        <h2 id="est-h" data-i18n="est_h">Get a free estimate</h2>
+        <p class="lead" data-i18n="est_lead">Tell us what needs painting. We reply the same day whenever we can.</p>
+        <ul class="contact-list">
+          <li><a href="tel:+17327916348"><svg><use href="#i-phone"/></svg>(732) 791-6348</a></li>
+          <li><a href="sms:+17327916348"><svg><use href="#i-sms"/></svg><span data-i18n="cta_text">Send us a text</span></a></li>
+          <li><a href="https://wa.me/17327916348"><svg><use href="#i-chat"/></svg><span data-i18n="cta_whatsapp">Message on WhatsApp</span></a></li>
+          <li><a href="mailto:madepaintingservice@gmail.com"><svg><use href="#i-mail"/></svg>madepaintingservice@gmail.com</a></li>
+        </ul>
+      </div>
+      <form name="estimate" method="POST" data-netlify="true" netlify-honeypot="company" id="est-form">
+        <input type="hidden" name="form-name" value="estimate">
+        <p class="hidden"><label>Leave this empty <input name="company"></label></p>
+        <div class="row">
+          <label><span data-i18n="f_name">Name</span><input name="name" autocomplete="name" required></label>
+          <label><span data-i18n="f_phone">Phone</span><input name="phone" type="tel" autocomplete="tel" required></label>
+        </div>
+        <div class="row">
+          <label><span data-i18n="f_town">Town</span><input name="town" autocomplete="address-level2"></label>
+          <label><span data-i18n="f_type">Type of job</span>
+            <select name="job">
+              <option data-i18n="o1">Interior painting</option>
+              <option data-i18n="o2">Exterior painting</option>
+              <option data-i18n="o3">Cabinets</option>
+              <option data-i18n="o4">Deck or wood</option>
+              <option data-i18n="o5">Drywall repair</option>
+              <option data-i18n="o6">Pressure washing</option>
+              <option data-i18n="o7">Something else</option>
+            </select>
+          </label>
+        </div>
+        <label><span data-i18n="f_msg">What needs painting?</span><textarea name="message" data-i18n-ph="f_msg_ph" placeholder="Rooms, size, when you would like it done"></textarea></label>
+        <button class="btn btn-primary" type="submit" data-i18n="f_send">Send estimate request</button>
+        <p class="form-note" data-i18n="f_note">We use your details only to reply about your estimate.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><strong>Made Painting Service Plus LLC</strong> <span data-i18n="foot">Insured painting contractor, Malden, Massachusetts</span></span>
+    <span>(732) 791-6348</span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-primary" href="tel:+17327916348"><svg><use href="#i-phone"/></svg><span data-i18n="call_short">Call</span></a>
+  <a class="btn btn-outline" href="sms:+17327916348"><svg><use href="#i-sms"/></svg><span data-i18n="text_short">Text</span></a>
+  <a class="btn btn-outline" href="https://wa.me/17327916348"><svg><use href="#i-chat"/></svg>WhatsApp</a>
+</div>
+
+<script>
+(function () {
+  var pt = {
+    call_short: "Ligar",
+    h1: "Pintura interna e externa em todo o Massachusetts",
+    hero_p: "Casas e empresas, de um cômodo à casa inteira. Preparação cuidadosa, acabamento limpo e orçamento grátis antes de qualquer serviço.",
+    cta_estimate: "Pedir orçamento grátis",
+    cta_whatsapp: "Falar pelo WhatsApp", cta_text: "Mandar SMS", text_short: "SMS",
+    fact_insured: "Com seguro",
+    fact_free: "Orçamento grátis",
+    fact_lang: "Inglês e português",
+    services_h: "O que pintamos",
+    services_lead: "Dentro, fora e tudo o que fica no meio.",
+    s1: "Pintura interna", s1d: "Paredes, tetos, rodapés e portas.",
+    s2: "Pintura externa", s2d: "Siding, acabamentos e portas, preparados para aguentar o inverno da Nova Inglaterra.",
+    s3: "Pintura de armários", s3d: "Armários de cozinha e banheiro renovados sem trocar.",
+    s4: "Decks e madeira", s4d: "Pintura de deck, tingimento e acabamento de madeira.",
+    s5: "Reparo de drywall", s5d: "Furos, rachaduras e remendos consertados antes da pintura.",
+    s6: "Remoção de papel de parede", s6d: "Papel antigo removido, parede preparada e pintada.",
+    s7: "Móveis e metal", s7d: "Móveis, corrimãos e superfícies de metal, inclusive com pintura a spray.",
+    s8: "Lavagem com pressão", s8d: "Siding, decks e garagens, sozinha ou antes da pintura.",
+    work_h: "Antes e depois",
+    work_lead: "Trabalhos recentes da nossa equipe. Toque numa foto para ampliar.", progress: "Em andamento", close: "Fechar",
+    p_som: "Pintura externa, Somerville", p_som_d: "Siding, acabamentos e o deck dos fundos.",
+    p_bil: "Renovação de armários, Billerica", p_bil_d: "Stain antigo removido e um novo, um pouco mais claro, aplicado.",
+    p_wel: "Armários de cozinha, Wellesley", p_wel_d: "Armários brancos repintados em verde-sálvia.", p_wel_with: "Com @prest_service_usa",
+    p_bro: "Casa inteira, Brookline", p_bro_d: "Exterior e todo o interior.",
+    p_cam: "Interior, Cambridge", p_cam_d: "Paredes, acabamentos, portas e escada.",
+
+    before: "Antes", after: "Depois",
+    how_h: "Como funciona",
+    st1: "Conte sobre o serviço", st1d: "Ligue, mande SMS ou fotos pelo WhatsApp. Algumas fotos ajudam a entender o espaço.",
+    st2: "Orçamento grátis", st2d: "Olhamos o espaço, conversamos sobre cores e acabamentos e passamos o preço por escrito.",
+    st3: "Pintamos", st3d: "Piso e móveis protegidos, superfícies reparadas e seladas, e então a tinta.",
+    st4: "Revisão final", st4d: "Conferimos o resultado com você e deixamos o ambiente limpo.",
+    rev_h: "Veja nossas avaliações no Google", rev_p: "Leia o que os clientes dizem, ou deixe sua avaliação depois do serviço.", rev_btn: "Abrir nosso perfil no Google",
+    area_h: "Onde atendemos", area_p: "Base em Malden, atendendo todo o Massachusetts. Não sabe se vamos até a sua cidade? Pergunte.", area_btn: "Perguntar sobre minha cidade",
+    est_h: "Peça um orçamento grátis", est_lead: "Conte o que precisa pintar. Respondemos no mesmo dia sempre que possível.",
+    f_name: "Nome", f_phone: "Telefone", f_town: "Cidade", f_type: "Tipo de serviço",
+    o1: "Pintura interna", o2: "Pintura externa", o3: "Armários", o4: "Deck ou madeira", o5: "Reparo de drywall", o6: "Lavagem com pressão", o7: "Outro",
+    f_msg: "O que precisa pintar?", f_msg_ph: "Cômodos, tamanho, quando gostaria de fazer",
+    f_send: "Enviar pedido de orçamento", f_note: "Usamos seus dados só para responder sobre o orçamento.",
+    foot: "Empresa de pintura com seguro, Malden, Massachusetts"
+  };
+  var es = {
+    call_short: "Llamar",
+    h1: "Pintura interior y exterior en todo Massachusetts",
+    hero_p: "Casas y negocios, desde una habitación hasta la casa entera. Preparación cuidadosa, acabado limpio y presupuesto gratis antes de empezar.",
+    cta_estimate: "Pedir presupuesto gratis",
+    cta_whatsapp: "Escribir por WhatsApp", cta_text: "Enviar mensaje de texto", text_short: "Texto",
+    fact_insured: "Asegurados",
+    fact_free: "Presupuesto gratis",
+    fact_lang: "Inglés y portugués",
+    services_h: "Lo que pintamos",
+    services_lead: "Por dentro, por fuera y todo lo que hay en medio.",
+    s1: "Pintura interior", s1d: "Paredes, techos, molduras y puertas.",
+    s2: "Pintura exterior", s2d: "Siding, molduras y puertas, preparados para el invierno de Nueva Inglaterra.",
+    s3: "Pintura de gabinetes", s3d: "Gabinetes de cocina y baño renovados sin cambiarlos.",
+    s4: "Decks y madera", s4d: "Pintura de decks, tinte y acabado de madera.",
+    s5: "Reparación de drywall", s5d: "Agujeros, grietas y parches reparados antes de pintar.",
+    s6: "Retiro de papel tapiz", s6d: "Papel viejo retirado, pared preparada y pintada.",
+    s7: "Muebles y metal", s7d: "Muebles, barandas y superficies de metal, también con pintura en spray.",
+    s8: "Lavado a presión", s8d: "Siding, decks y entradas, solo o antes de pintar.",
+    work_h: "Antes y después",
+    work_lead: "Trabajos recientes de nuestro equipo. Toque una foto para ampliarla.", progress: "En proceso", close: "Cerrar",
+    p_som: "Pintura exterior, Somerville", p_som_d: "Siding, molduras y el deck trasero.",
+    p_bil: "Renovación de gabinetes, Billerica", p_bil_d: "Tinte viejo retirado y uno nuevo, un poco más claro, aplicado.",
+    p_wel: "Gabinetes de cocina, Wellesley", p_wel_d: "Gabinetes blancos repintados en verde salvia.", p_wel_with: "Con @prest_service_usa",
+    p_bro: "Casa completa, Brookline", p_bro_d: "Exterior y todo el interior.",
+    p_cam: "Interior, Cambridge", p_cam_d: "Paredes, molduras, puertas y escalera.",
+
+    before: "Antes", after: "Después",
+    how_h: "Cómo trabajamos",
+    st1: "Cuéntenos del trabajo", st1d: "Llame, escriba o mande fotos por WhatsApp. Unas fotos nos ayudan a entender el espacio.",
+    st2: "Presupuesto gratis", st2d: "Vemos el espacio, hablamos de colores y acabados y le damos el precio por escrito.",
+    st3: "Pintamos", st3d: "Pisos y muebles protegidos, superficies reparadas y selladas, y luego la pintura.",
+    st4: "Revisión final", st4d: "Revisamos el resultado con usted y dejamos el espacio limpio.",
+    rev_h: "Vea nuestras reseñas en Google", rev_p: "Lea lo que dicen nuestros clientes, o deje su reseña después del trabajo.", rev_btn: "Abrir nuestro perfil en Google",
+    area_h: "Dónde trabajamos", area_p: "Con base en Malden, trabajamos en todo Massachusetts. ¿No sabe si llegamos a su ciudad? Pregúntenos.", area_btn: "Preguntar por mi ciudad",
+    est_h: "Pida un presupuesto gratis", est_lead: "Cuéntenos qué necesita pintar. Respondemos el mismo día siempre que podemos.",
+    f_name: "Nombre", f_phone: "Teléfono", f_town: "Ciudad", f_type: "Tipo de trabajo",
+    o1: "Pintura interior", o2: "Pintura exterior", o3: "Gabinetes", o4: "Deck o madera", o5: "Reparación de drywall", o6: "Lavado a presión", o7: "Otro",
+    f_msg: "¿Qué necesita pintar?", f_msg_ph: "Habitaciones, tamaño, cuándo le gustaría hacerlo",
+    f_send: "Enviar solicitud de presupuesto", f_note: "Usamos sus datos solo para responder sobre su presupuesto.",
+    foot: "Empresa de pintura asegurada, Malden, Massachusetts"
+  };
+  var en = {};
+  document.querySelectorAll("[data-i18n]").forEach(function (el) { en[el.getAttribute("data-i18n")] = el.textContent; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { en[el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder"); });
+  var dicts = { en: en, pt: pt, es: es };
+  var htmlLang = { en: "en", pt: "pt-BR", es: "es" };
+  var btns = document.querySelectorAll(".langs .lang");
+  function apply(lang) {
+    var d = dicts[lang] || en;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { var k = el.getAttribute("data-i18n"); if (d[k]) el.textContent = d[k]; });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { var k = el.getAttribute("data-i18n-ph"); if (d[k]) el.setAttribute("placeholder", d[k]); });
+    document.documentElement.lang = htmlLang[lang] || "en";
+    btns.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false"); });
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  if (!dicts[saved]) {
+    var nav = (navigator.language || "").toLowerCase().slice(0, 2);
+    saved = dicts[nav] ? nav : "en";
+  }
+  if (saved !== "en") apply(saved);
+  btns.forEach(function (b) { b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); }); });
+})();
+(function () {
+  var lb = document.getElementById("lightbox"), img = lb.querySelector("img"), closeBtn = document.getElementById("lb-close"), last = null;
+  function close() { lb.classList.remove("open"); img.removeAttribute("src"); if (last) last.focus(); }
+  document.querySelectorAll(".shot").forEach(function (b) {
+    b.addEventListener("click", function () { last = b; img.src = b.querySelector("img").src; img.alt = b.querySelector("img").alt; lb.classList.add("open"); closeBtn.focus(); });
+  });
+  closeBtn.addEventListener("click", close);
+  lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+})();
+</script>
+</body>
+</html>
