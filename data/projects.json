@@ -1,0 +1,23 @@
+[
+  {"id": "cambridge-interior", "city": "Cambridge", "services": ["interior-painting"],
+   "desc": {"en": "Walls, trim, doors and staircase.", "pt": "Paredes, acabamentos, portas e escada.", "es": "Paredes, molduras, puertas y escalera."},
+   "photos": [["cambridge-antes","before","Living room before"],["cambridge-depois-1","after","Living room after"],["cambridge-depois-3","after","Bedroom after"]]},
+  {"id": "brookline-interior", "city": "Brookline", "services": ["interior-painting"],
+   "desc": {"en": "Full interior, part of a whole-house job.", "pt": "Interior completo, parte de uma obra da casa inteira.", "es": "Interior completo, parte de un trabajo de casa completa."},
+   "photos": [["brookline-depois-1","after","Room after"],["brookline-depois-2","after","Room after"],["brookline-depois-3","after","Kitchen after"]]},
+  {"id": "wellesley-cabinets", "city": "Wellesley", "services": ["cabinet-painting"],
+   "desc": {"en": "White cabinets repainted in sage green. With @prest_service_usa", "pt": "Armários brancos repintados em verde-sálvia. Com @prest_service_usa", "es": "Gabinetes blancos repintados en verde salvia. Con @prest_service_usa"},
+   "photos": [["wellesley-antes-1","before","Kitchen cabinets before"],["wellesley-depois-1","after","Kitchen cabinets after"],["wellesley-antes-2","before","Kitchen cabinets before"],["wellesley-depois-2","after","Kitchen cabinets after"]]},
+  {"id": "billerica-cabinets", "city": "Billerica", "services": ["cabinet-painting"],
+   "desc": {"en": "Old stain stripped and a new, slightly lighter stain applied.", "pt": "Stain antigo removido e um novo, um pouco mais claro, aplicado.", "es": "Tinte viejo retirado y uno nuevo, un poco más claro, aplicado."},
+   "photos": [["billerica-antes","before","Cabinets before"],["billerica-depois-1","after","Cabinets after"],["billerica-depois-2","after","Cabinets after"],["billerica-depois-3","after","Cabinets after"]]},
+  {"id": "cambridge-stairs", "city": "Cambridge", "services": ["stairs-railings"],
+   "desc": {"en": "Staircase painted along with the rest of the interior.", "pt": "Escada pintada junto com o restante do interior.", "es": "Escalera pintada junto con el resto del interior."},
+   "photos": [["cambridge-depois-2","after","Staircase after"]]},
+  {"id": "somerville-exterior", "city": "Somerville", "services": ["exterior-painting"],
+   "desc": {"en": "Siding, trim and the back deck.", "pt": "Siding, acabamentos e o deck dos fundos.", "es": "Siding, molduras y el deck trasero."},
+   "photos": [["somerville-antes-1","before","House before"],["somerville-depois-1","after","House after"],["somerville-antes-2","before","Deck before"],["somerville-depois-2","after","Deck after"]]},
+  {"id": "brookline-exterior", "city": "Brookline", "services": ["exterior-painting"],
+   "desc": {"en": "Exterior, part of a whole-house job.", "pt": "Exterior, parte de uma obra da casa inteira.", "es": "Exterior, parte de un trabajo de casa completa."},
+   "photos": [["brookline-exterior","after","House exterior after"]]}
+]
