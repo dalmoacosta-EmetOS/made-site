@@ -126,6 +126,41 @@
   ]
  },
  {
+  "id": "brookline-stairs",
+  "city": "Brookline",
+  "services": [
+   "stairs-railings"
+  ],
+  "after_only_ok": true,
+  "desc": {
+   "en": "Main staircase with handrail and balusters, plus the basement stairs.",
+   "pt": "Escada principal com corrimão e balaústres, e a escada do basement.",
+   "es": "Escalera principal con pasamanos y balaústres, y la escalera del sótano."
+  },
+  "photos": [
+   [
+    "brookline-escada-1",
+    "after",
+    "Main staircase after"
+   ],
+   [
+    "brookline-escada-3",
+    "after",
+    "Staircase after"
+   ],
+   [
+    "brookline-escada-4",
+    "after",
+    "Basement stairs after"
+   ],
+   [
+    "brookline-escada-5",
+    "after",
+    "Basement stairs after"
+   ]
+  ]
+ },
+ {
   "id": "cambridge-stairs",
   "city": "Cambridge",
   "services": [

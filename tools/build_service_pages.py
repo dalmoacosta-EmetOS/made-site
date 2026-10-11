@@ -99,7 +99,7 @@ for pg in PAGES:
     inc = "\n".join(f'<li><svg><use href="#i-check"/></svg><span data-i18n="i{i}">{esc(t)}</span></li>' for i,t in enumerate(en['inc']))
     gallery = ''
     projs = [x for x in PROJECTS if pg['slug'] in x['services']
-             and any(k=='before' for _,k,_ in x['photos']) and any(k=='after' for _,k,_ in x['photos'])]
+             and (x.get('after_only_ok') or (any(k=='before' for _,k,_ in x['photos']) and any(k=='after' for _,k,_ in x['photos'])))]
     for x in projs:
         if x['photos'][0][1] != 'before': x['photos'].sort(key=lambda t: 0 if t[1]=='before' else 1)
     if projs:
