@@ -41,19 +41,24 @@
   },
   "photos": [
    [
+    "brookline-interior-antes-1",
+    "before",
+    "Living room before"
+   ],
+   [
+    "brookline-interior-antes-2",
+    "before",
+    "Fireplace wall before"
+   ],
+   [
     "brookline-depois-1",
     "after",
-    "Room after"
+    "Living room after"
    ],
    [
     "brookline-depois-2",
     "after",
-    "Room after"
-   ],
-   [
-    "brookline-depois-3",
-    "after",
-    "Kitchen after"
+    "Hall and staircase after"
    ]
   ]
  },
@@ -131,7 +136,6 @@
   "services": [
    "stairs-railings"
   ],
-  "after_only_ok": true,
   "desc": {
    "en": "Main staircase with handrail and balusters, plus the basement stairs.",
    "pt": "Escada principal com corrimão e balaústres, e a escada do basement.",
@@ -139,9 +143,19 @@
   },
   "photos": [
    [
+    "brookline-escada-antes-1",
+    "before",
+    "Carpeted staircase before"
+   ],
+   [
     "brookline-escada-1",
     "after",
     "Main staircase after"
+   ],
+   [
+    "brookline-escada-antes-2",
+    "before",
+    "Balusters before"
    ],
    [
     "brookline-escada-3",
