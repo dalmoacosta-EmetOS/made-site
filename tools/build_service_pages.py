@@ -159,7 +159,7 @@ for pg in PAGES:
   <div class="hero-ctas"><a class="btn btn-primary" href="/?job={pg['job']}#estimate" data-i18n="cta_est">{C['cta_est']}</a><a class="btn btn-ghost" href="tel:+17327916348"><svg><use href="#i-phone"/></svg>(732) 791-6348</a></div>
 </div></section>
 </main>
-<footer><div class="wrap"><span><strong>Made Painting Service Plus LLC</strong> <span data-i18n="foot">{C['foot']}</span></span><span>(732) 791-6348</span></div></footer>
+<footer><div class="wrap"><span><strong>Made Painting Service Plus LLC</strong> <span data-i18n="foot">{C['foot']}</span></span><span>(732) 791-6348 · <a href="https://www.instagram.com/madepaintingserviceplus/" target="_blank" rel="noopener">Instagram @madepaintingserviceplus</a></span></div></footer>
 <div class="callbar">
   <a class="btn btn-primary" href="tel:+17327916348"><svg><use href="#i-phone"/></svg><span data-i18n="call_short">Call</span></a>
   <a class="btn btn-outline" href="sms:+17327916348"><svg><use href="#i-sms"/></svg><span data-i18n="text_short">Text</span></a>

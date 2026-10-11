@@ -210,3 +210,5 @@
 .cta-band { background: var(--forest); color: var(--white); }
 .cta-band h2 { color: var(--white); }
 .cta-band .lead { color: #D7DED8; margin-bottom: 22px; }
+
+footer a { color: #C9D1CB; }
