@@ -97,6 +97,7 @@
   .facts { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; color: var(--cream); font-weight: 600; }
   .facts li { display: flex; align-items: center; gap: 8px; }
   .facts svg { width: 16px; height: 16px; }
+  .fact-link { display: flex; align-items: center; gap: 8px; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
   /* Sections */
   section { padding: clamp(52px, 8vw, 96px) 0; }
@@ -170,6 +171,21 @@
   .insta-line a:hover { text-decoration: underline; }
   .insta-line svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: 6px; }
   footer a { color: #C9D1CB; }
+  /* Reviews */
+  .rating { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 6px 0 8px; font-size: 17px; color: var(--ink-soft); }
+  .rating .big { font-size: 34px; font-weight: 800; color: var(--forest); line-height: 1; }
+  .stars { display: inline-flex; gap: 2px; color: #E0A526; }
+  .stars svg { width: 18px; height: 18px; fill: currentColor; }
+  .lead.small { font-size: 15px; }
+  .reviews { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 760px) { .reviews { grid-template-columns: 1fr 1fr; } }
+  .review { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .review blockquote { margin: 0; font-size: 16px; line-height: 1.55; color: var(--ink); flex: 1; }
+  .review .who { margin: 0; font-size: 14px; color: var(--ink-soft); }
+  .review .who strong { color: var(--forest); }
+  .rev-cta { margin: 22px 0 0; }
+  .area-panel { margin-top: clamp(32px, 5vw, 48px); }
+  #reviews { scroll-margin-top: 110px; }
   /* Reviews + area */
   .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; }
   .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); background: var(--white); }
@@ -264,6 +280,7 @@
           <li><svg><use href="#i-check"/></svg><span data-i18n="fact_insured">Insured</span></li>
           <li><svg><use href="#i-check"/></svg><span data-i18n="fact_free">Free estimates</span></li>
           <li><svg><use href="#i-check"/></svg><span data-i18n="fact_quality">High-quality finish</span></li>
+          <li><a class="fact-link" href="#reviews"><svg><use href="#i-check"/></svg><span data-i18n="fact_google">5.0 on Google</span></a></li>
         </ul>
       </div>
     </div>
@@ -388,14 +405,21 @@
     </div>
   </section>
 
-  <section aria-label="Reviews and service area">
-    <div class="wrap two">
-      <div class="panel">
-        <h3 data-i18n="rev_h">Read our reviews on Google</h3>
-        <p data-i18n="rev_p">See what our clients say, or leave a review after your job.</p>
-        <a class="btn btn-outline" href="https://www.google.com/search?q=Made+Painting+Service+Plus+LLC" data-i18n="rev_btn">Open our Google profile</a>
+  <section id="reviews" aria-labelledby="rev-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="rev-h" data-i18n="rev_h2">What our clients say</h2>
+        <p class="rating"><span class="big">5.0</span><span class="stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span><span><span>4</span> <span data-i18n="rev_count">reviews on Google</span></span></p>
+        <p class="lead small" data-i18n="rev_note">Reviews are shown exactly as clients wrote them.</p>
       </div>
-      <div class="panel">
+      <ul class="reviews">
+        <li class="review"><div class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></div><blockquote>“We had some painting work done by this company, and the results were absolutely exceptional! We are extremely happy with the quality of their work and the attention to detail. Everything turned out beautifully, and we couldn’t be more satisfied. We highly recommend them to anyone looking for professional, high-quality painting services!”</blockquote><p class="who"><strong>Louis Restoration</strong> · <span data-i18n="rev_src">Google review</span></p></li>
+        <li class="review"><div class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></div><blockquote>“Mr. Costa was recommended to us by a trusted contractor. He gave a great estimate, did excellent work, and was very attentive.”</blockquote><p class="who"><strong>Tamara S.</strong> · <span data-i18n="rev_src">Google review</span></p></li>
+        <li class="review"><div class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></div><blockquote>“Excellent service from start to finish! High-quality workmanship, on-time completion, and a very professional team. Great attention to detail and excellent communication throughout the project. Highly recommend!”</blockquote><p class="who"><strong>Guilherme F.</strong> · <span data-i18n="rev_src">Google review</span></p></li>
+        <li class="review"><div class="stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></div><blockquote>“Great price. I’m very happy with the work they did! The team is extremely professional, and the quality of the finish is exceptional. Their attention to every detail shows real care and craftsmanship, and the result exceeded my expectations. I highly recommend them!”</blockquote><p class="who"><strong>Cleudimar S.</strong> · <span data-i18n="rev_src">Google review</span></p></li>
+      </ul>
+      <p class="rev-cta"><a class="btn btn-outline" href="https://share.google/VWm9uItiGUyi4nuVP" target="_blank" rel="noopener" data-i18n="rev_btn2">See all reviews on Google</a></p>
+      <div class="panel area-panel">
         <h3 data-i18n="area_h">Where we work</h3>
         <p data-i18n="area_p">Based in Malden, working across Massachusetts. Not sure if we go to your town? Ask us.</p>
         <a class="btn btn-outline" href="#estimate" data-i18n="area_btn">Ask about your town</a>
@@ -470,7 +494,7 @@
     cta_whatsapp: "Falar pelo WhatsApp", cta_text: "Mandar SMS", text_short: "SMS",
     fact_insured: "Com seguro",
     fact_free: "Orçamento grátis",
-    fact_quality: "Acabamento de alta qualidade",
+    fact_quality: "Acabamento de alta qualidade", fact_google: "Nota 5,0 no Google",
     services_h: "O que pintamos",
     services_lead: "Dentro, fora e tudo o que fica no meio.",
     s1: "Pintura interna", s1d: "Paredes, tetos, rodapés e portas.",
@@ -524,6 +548,7 @@
     chip_det: "Ver detalhes",
     nav_services: "Serviços", nav_work: "Trabalhos", nav_about: "Sobre nós", nav_est: "Orçamento",
     insta_more: "Mais obras no nosso Instagram:",
+    rev_h2: "O que nossos clientes dizem", rev_count: "avaliações no Google", rev_note: "As avaliações aparecem exatamente como os clientes escreveram, no idioma original.", rev_src: "Avaliação no Google", rev_btn2: "Ver todas as avaliações no Google",
     foot: "Empresa de pintura com seguro, Malden, Massachusetts"
   };
   var es = {
@@ -534,7 +559,7 @@
     cta_whatsapp: "Escribir por WhatsApp", cta_text: "Enviar mensaje de texto", text_short: "Texto",
     fact_insured: "Asegurados",
     fact_free: "Presupuesto gratis",
-    fact_quality: "Acabado de alta calidad",
+    fact_quality: "Acabado de alta calidad", fact_google: "5,0 en Google",
     services_h: "Lo que pintamos",
     services_lead: "Por dentro, por fuera y todo lo que hay en medio.",
     s1: "Pintura interior", s1d: "Paredes, techos, molduras y puertas.",
@@ -588,6 +613,7 @@
     chip_det: "Ver detalles",
     nav_services: "Servicios", nav_work: "Trabajos", nav_about: "Nosotros", nav_est: "Presupuesto",
     insta_more: "Más trabajos en nuestro Instagram:",
+    rev_h2: "Lo que dicen nuestros clientes", rev_count: "reseñas en Google", rev_note: "Las reseñas se muestran tal como las escribieron los clientes, en su idioma original.", rev_src: "Reseña en Google", rev_btn2: "Ver todas las reseñas en Google",
     foot: "Empresa de pintura asegurada, Malden, Massachusetts"
   };
   var en = {};
