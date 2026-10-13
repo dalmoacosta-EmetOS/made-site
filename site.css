@@ -212,3 +212,4 @@
 .cta-band .lead { color: #D7DED8; margin-bottom: 22px; }
 
 footer a { color: #C9D1CB; }
+footer .credit { flex-basis: 100%; font-size: 13px; opacity: .75; }

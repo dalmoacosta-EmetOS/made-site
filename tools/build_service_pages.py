@@ -10,21 +10,21 @@ COMMON = {
    area_more="Don't see your town? Ask us.", other_h="Other services",
    cta_h="Get a free, detailed estimate", cta_p="Every estimate is in writing, with each step explained. What we agree on is what we deliver.",
    cta_est="Request an estimate", cta_text="Send us a text", call_short="Call", text_short="Text", before="Before", after="After", close="Close",
-   foot="Insured painting contractor, Malden, Massachusetts"),
+   foot="Insured painting contractor, Malden, Massachusetts", credit="Website by"),
  'pt': dict(back="← Todos os serviços", inc_h="O que está incluído", work_h="Trabalhos recentes", tap="Toque numa foto para ampliar.",
    area_h="Onde atendemos", area_p="Com base em Malden, atendemos cidades de todo o Massachusetts, como:",
    area_more="Não viu sua cidade? Pergunte.", other_h="Outros serviços",
    cta_h="Peça um orçamento grátis e detalhado", cta_p="Todo orçamento é por escrito, com cada etapa explicada. O que combinamos é o que entregamos.",
    cta_est="Pedir orçamento", cta_text="Mandar SMS", call_short="Ligar", text_short="SMS", before="Antes", after="Depois", close="Fechar",
    nav_services="Serviços", nav_work="Trabalhos", nav_about="Sobre nós", nav_est="Orçamento",
-   foot="Empresa de pintura com seguro, Malden, Massachusetts"),
+   foot="Empresa de pintura com seguro, Malden, Massachusetts", credit="Site por"),
  'es': dict(back="← Todos los servicios", inc_h="Qué incluye", work_h="Trabajos recientes", tap="Toque una foto para ampliarla.",
    area_h="Dónde trabajamos", area_p="Con base en Malden, atendemos ciudades de todo Massachusetts, como:",
    area_more="¿No ve su ciudad? Pregúntenos.", other_h="Otros servicios",
    cta_h="Pida un presupuesto gratis y detallado", cta_p="Cada presupuesto es por escrito, con cada paso explicado. Lo que acordamos es lo que entregamos.",
    cta_est="Pedir presupuesto", cta_text="Enviar mensaje de texto", call_short="Llamar", text_short="Texto", before="Antes", after="Después", close="Cerrar",
    nav_services="Servicios", nav_work="Trabajos", nav_about="Nosotros", nav_est="Presupuesto",
-   foot="Empresa de pintura asegurada, Malden, Massachusetts"),
+   foot="Empresa de pintura asegurada, Malden, Massachusetts", credit="Sitio web por"),
 }
 TOWNS = "Malden, Medford, Everett, Melrose, Revere, Saugus, Somerville, Cambridge, Boston, Arlington, Lexington, Woburn, Burlington, Billerica, Waltham, Newton, Brookline, Wellesley, Quincy, Winchester."
 
@@ -130,7 +130,7 @@ for pg in PAGES:
 <body>
 {icons}
 <header class="top"><div class="wrap">
-  <a class="brand" href="/" aria-label="Made Painting Service Plus, home"><img src="/logo.png" alt="" width="46" height="46"><span class="brand-name">Made Painting<small>Service Plus LLC</small></span></a>
+  <a class="brand" href="/" aria-label="Made Painting Service Plus, home"><img src="/logo.png" alt="" width="42" height="46"><span class="brand-name">Made Painting<small>Service Plus LLC</small></span></a>
   <nav class="mainnav" aria-label="Main"><a href="/#services" data-i18n="nav_services">Services</a><a href="/#work" data-i18n="nav_work">Our work</a><a href="/#about" data-i18n="nav_about">About us</a><a href="/#estimate" data-i18n="nav_est">Free estimate</a></nav>
   <div class="top-actions">
     <div class="langs" role="group" aria-label="Language"><button class="lang" type="button" data-lang="en" aria-pressed="true">EN</button><button class="lang" type="button" data-lang="pt" aria-pressed="false">PT</button><button class="lang" type="button" data-lang="es" aria-pressed="false">ES</button></div>
@@ -159,7 +159,7 @@ for pg in PAGES:
   <div class="hero-ctas"><a class="btn btn-primary" href="/?job={pg['job']}#estimate" data-i18n="cta_est">{C['cta_est']}</a><a class="btn btn-ghost" href="tel:+17327916348"><svg><use href="#i-phone"/></svg>(732) 791-6348</a></div>
 </div></section>
 </main>
-<footer><div class="wrap"><span><strong>Made Painting Service Plus LLC</strong> <span data-i18n="foot">{C['foot']}</span></span><span>(732) 791-6348 · <a href="https://www.instagram.com/madepaintingserviceplus/" target="_blank" rel="noopener">Instagram @madepaintingserviceplus</a></span></div></footer>
+<footer><div class="wrap"><span><strong>Made Painting Service Plus LLC</strong> <span data-i18n="foot">{C['foot']}</span></span><span>(732) 791-6348 · <a href="https://www.instagram.com/madepaintingserviceplus/" target="_blank" rel="noopener">Instagram @madepaintingserviceplus</a></span><span class="credit"><span data-i18n="credit">{C['credit']}</span> <a href="https://emetmoney.com" target="_blank" rel="noopener">EMET Web</a></span></div></footer>
 <div class="callbar">
   <a class="btn btn-primary" href="tel:+17327916348"><svg><use href="#i-phone"/></svg><span data-i18n="call_short">Call</span></a>
   <a class="btn btn-outline" href="sms:+17327916348"><svg><use href="#i-sms"/></svg><span data-i18n="text_short">Text</span></a>
